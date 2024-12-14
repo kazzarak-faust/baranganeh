@@ -1,0 +1,379 @@
+<html>
+<head>
+    <title>Stranger Things</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #E0F7FA;
+        }
+        .header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .main-bg {
+            width: 100%;
+            height: auto;
+        }
+        .menu-icon {
+            width: 40px;
+            height: 40px;
+        }
+        .header h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            color: #8B0000;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 10px 0px;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100%;
+            background: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+        .sidebar .menu-item {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+        .sidebar .menu-item i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #f06292;
+        }
+        .sidebar .menu-item a {
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar .menu-item:hover {
+            background-color: #D5C1BF;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content h2 {
+            color: #8B0000;
+            font-size: 2em;
+        }
+        .content p {
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .content .buttons {
+            margin: 20px 0;
+        }
+        .content .buttons a {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1em;
+        }
+        .content .poster {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .content .poster img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .content .text-content {
+            max-width: 800px;
+            margin: 20px;
+        }
+        .header2 {
+            background-color: #333;
+            color: #f9f9f9;
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 60px;
+            font-size: 24px;
+            font-family: 'Georgia', serif;
+            margin-bottom: -70px;
+            border-radius: 20px;
+        }
+        .sub-header {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .divider {
+            width: 100%;
+            height: 20%;
+            display: block;
+        }
+        .content2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            padding-top: 50px;
+            background-image: url(asset/bg/bg2down.jpg);
+            background-size: cover;
+            background-position: center;
+            margin-top: -70px;
+            border-radius: 10px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .card img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+        }
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 14px;
+            color: #333;
+        }
+        .footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            color: #d9534f;
+            border-top: 2px solid #d9534f;
+        }
+        .footer i {
+            margin-right: 5px;
+        }
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row;
+                justify-content: center;
+                text-align: left;
+            }
+            .content .poster {
+                order: 2;
+                margin: 0 0 0 20px;
+            }
+            .content .text-content {
+                margin: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            .navbar a {
+                font-size: 1em;
+            }
+            .content h2 {
+                font-size: 1.5em;
+            }
+            .content p {
+                font-size: 1em;
+            }
+            .content .buttons a {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+            .content .poster img {
+                width: 150px;
+            }
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="main-bg" alt="Background image of a sunset with a sign that says 'Welcome to Hawkins'" height="400" src="https://placehold.co/1200x400" width="1200"/>
+        <div class="navbar">
+            <img class="menu-icon" src="https://placehold.co/40x40" onclick="toggleSidebar()">
+            <div class="sidebar hidden">
+                <img class="menu-icon" src="https://placehold.co/40x40" onclick="toggleSidebar()">
+                <div class="menu-item">
+                    <img class="menu-icon default-icon" src="https://placehold.co/40x40">
+                    <a href="#">Akun</a>
+                </div>
+                <div class="menu-item">
+                    <img class="menu-icon default-icon" src="https://placehold.co/40x40">
+                    <a href="#">Tentang Kami</a>
+                </div>
+                <div class="menu-item">
+                    <img class="menu-icon default-icon" src="https://placehold.co/40x40">
+                    <a href="#">Tambah Konspirasi</a>
+                </div>
+            </div>
+            <div>
+                <a href="#">Berita</a>
+                <a href="#">Konspirasi</a>
+                <a href="#">Games</a>
+            </div>
+        </div>
+        <h1>
+            <img src="https://placehold.co/400x100">
+        </h1>
+    </div>
+    <div class="content">
+        <div class="text-content">
+            <h2>WELCOME, STANGERHEADS!</h2>
+            <p>Stranger Things adalah serial TV yang berlatar belakang tahun 1980-an di kota Hawkins, Indiana. Serial ini menceritakan perputaran hilangnya seorang anak laki-laki bernama Will Byers dan upaya teman-temannya untuk menemukannya.</p>
+            <p>Selama pencarian, mereka bertemu dengan seorang gadis misterius bernama Eleven yang memiliki kekuatan super. Bersama-sama, mereka mengungkap rahasia gelap yang melibatkan eksperimen pemerintah, dimensi paralel yang disebut “Upside Down”, dan makhluk mengerikan yang mengecam kota Hawkins.</p>
+            <div class="buttons">
+                <a href="#">Jelajahi Hawkins</a>
+                <a href="#">Jelajahi Upside Down</a>
+            </div>
+        </div>
+        <div class="poster">
+            <img alt="Poster of Stranger Things showing the main characters and the title" height="300" src="https://placehold.co/200x300" width="200"/>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="header2">
+            WELCOME, TO HAWKINS!
+            <div class="sub-header">
+                HELLFIRE CLUB
+            </div>
+        </div>
+        <img class="divider" src="https://placehold.co/1200x20" alt="Torn paper separator">
+        <div class="content2">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img alt="Mike Wheeler" height="400" src="https://placehold.co/300x400" width="300"/>
+                            <h3>MIKE WHEELER</h3>
+                            <p>Mike dikenal sebagai pimpinan kelompok teman - temannya. Ia memiliki hati yang besar, setia, dan berani, terutama dalam mencari dan menyelamatkan sahabatnya yang hilang.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img alt="Will Byers" height="400" src="https://placehold.co/300x400" width="300"/>
+                            <h3>WILL BYERS</h3>
+                            <p>Pada season 1, Will diculik oleh makhluk dari The Upside Down. Ia dikenal sebagai anak yang pemalu dan sensitif, namun memiliki ikatan erat dengan teman - temannya.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img alt="Dustin Henderson" height="400" src="https://placehold.co/300x400" width="300"/>
+                            <h3>DUSTIN HENDERSON</h3>
+                            <p>Menjadi salah satu sahabat Mike Wheeler, Dustin adalah anggota Hellfire Club yang sangat aktif dan ceria. Ia memiliki cara bicara yang khusus karena menderita cleidocranial dysplasia yang menyebabkan dia cadel.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img alt="Lucas Sinclair" height="400" src="https://placehold.co/300x400" width="300"/>
+                            <h3>LUCAS SINCLAIR</h3>
+                            <p>Lucas adalah teman setia yang selalu siap membantu dalam situasi sulit. Dia memiliki keterampilan bertahan hidup yang baik dan sering kali menjadi suara rasional dalam kelompok.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img alt="Eleven" height="400" src="https://placehold.co/300x400" width="300"/>
+                            <h3>ELEVEN</h3>
+                            <p>Eleven adalah gadis dengan kekuatan telekinetik yang luar biasa. Dia melarikan diri dari laboratorium rahasia dan menjadi kunci dalam mengungkap misteri di Hawkins.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <i class="fas fa-exclamation-triangle"></i>
+        ATTENTION!
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            speed: 600,
+            autoplay: {
+                delay: 5000,
+            },
+            slidesPerView: 'auto',
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 40,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+            },
+        });
+    </script>
+</body>
+</html>
