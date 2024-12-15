@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+    <link rel="stylesheet" href="asset/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-section">
+        <img src="asset/bg/bglogin.png" alt="Registration background" />
+      </div>
+      <div class="form-section">
+        <h2>REGISTER</h2>
+        <p>Lengkapi data berikut untuk membuat akun</p>
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Masukkan username" />
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Masukkan email" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div style="position: relative;">
+            <input id="password" type="password" placeholder="************" />
+            <img class="password-toggle" src="asset/icon/eye.png" alt="Toggle password visibility" width="20" />
+          </div>
+        </div>
+        <button class="btn-register">Daftar</button>
+        <p class="login-link">
+          Sudah memiliki akun?
+          <a href="login.html">Login disini</a>
+        </p>
+      </div>
+    </div>
+    <script>
+    document.querySelector('.password-toggle').addEventListener('click', function() {
+      const passwordInput = document.getElementById('password');
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      this.src = type === 'password' ? 'asset/icon/hide.png' : 'asset/icon/eye.png';
+    });
+    </script>
+    </body>
+</html>

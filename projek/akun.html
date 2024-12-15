@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="../asset/css/main.css"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #3b0000;
+            color: white;
+        }
+
+        .header-add {
+            background-color: #5a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-add .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header-add .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .header-add .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .header-add .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-add .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .content-akun {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .content-akun h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .profile-card {
+            background-color: #5a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            width: 50%;
+            margin: 0 auto;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-card h2 {
+            margin: 10px 0 5px;
+        }
+
+        .profile-card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .history {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .history h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .history-item {
+            background-color: #5b0000;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .history-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .history-item .text {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: #5a1a1a;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .nav {
+            margin-bottom: 10px;
+        }
+
+        footer .nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .social-icons img {
+            width: 24px;
+            margin: 0 5px;
+        }
+        .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 0px;
+    left: auto;
+    background: transparent;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    height: 160px;
+}
+
+.popup-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.popup-content img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    background-color: #5a1a1a;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup-content button:hover {
+    background-color: #3b0000;
+}
+    </style>
+    <script>
+        function redirectToProfile() {
+            window.location.href = "akun.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="header-add">
+        <div class="logo">
+            STRANGER THINGS
+        </div>
+        <div class="nav">
+            <a href="../index.html">Beranda</a>
+            <a href="konspirasi.html">Lihat Konspirasi</a>
+        </div>
+        <div class="profile" onclick="togglePopup()">
+            <span>Ariza Nola Rufiana</span>
+            <img alt="Profile Picture" src="https://storage.googleapis.com/a1aa/image/sFqNm1CWpGa8I5prtYQdfW8GbXhCeWq1ocL3xZnWQ3wpme1nA.jpg" />
+        </div>
+        <!-- Pop-up container -->
+        <div id="profile-popup" class="popup-overlay">
+            <div class="popup-content">
+                <button onclick="">Login</button>
+                <button onclick="">Register</button>
+                <button onclick="closePopup()">Tutup</button>
+            </div>
+        </div>
+    </div>
+    <div class="content-akun">
+        <h1>PROFIL</h1>
+        <div class="profile-card">
+            <img src="https://via.placeholder.com/100" alt="User">
+            <h2>ArizaZeriveFudel</h2>
+            <p>sipalinganeh@gmail.com</p>
+            <p>0874567876556</p>
+        </div>
+
+        <div class="history">
+            <h2>RIWAYAT PENYEBARAN KONSPIRASI</h2>
+            <div class="history-item">
+                <img src="https://via.placeholder.com/60" alt="Konspirasi">
+                <div class="text">
+                    <p>TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI.</p>
+                    <p>Ter Upload pada: 23/05/2024</p>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <img src="https://via.placeholder.com/60" alt="Konspirasi">
+                <div class="text">
+                    <p>TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI.</p>
+                    <p>Ter Upload pada: 10/11/2024</p>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <img src="https://via.placeholder.com/60" alt="Konspirasi">
+                <div class="text">
+                    <p>TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI.</p>
+                    <p>Ter Upload pada: 10/11/2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="logo">
+                <img src="../asset/gambar/STRANGER THINGS.png">
+            </div>
+            <div class="nav">
+                <a href="#">Kontak</a>
+                <a href="#">Bantuan</a>
+                <a href="#">FaQ</a>
+                <a href="#">Informasi</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="../asset/icon/instagram.png" alt="Instagram icon" width="30" height="30"></a>
+                <a href="#"><img src="../asset/icon/gmail.png" alt="Gmail icon" width="30" height="30"></a>
+                <a href="#"><img src="../asset/icon/facebook.png" alt="Facebook icon" width="30" height="30"></a>
+            </div>
+        </div>
+        <script>
+            function togglePopup() {
+                const popup = document.getElementById("profile-popup");
+                popup.style.display = popup.style.display === "block" ? "none" : "block";
+            }
+    
+            function closePopup() {
+                document.getElementById("profile-popup").style.display = "none";
+            }
+        </script>
+</body>
+</html>
