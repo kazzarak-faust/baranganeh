@@ -27,7 +27,11 @@
     <div class="header-main">
         <div class="header-main">
             <div class="navbar-main">
-                <img class="menu-icon" src="asset/icon/menu.png" onclick="toggleSidebar()">
+                <div class="jadi-satu">
+                    <img class="menu-icon" src="asset/icon/menu.png" onclick="toggleSidebar()">
+                    <a href="konspirasi/konspirasi.html">Konspirasi</a>
+                    <a href="#">Games</a>
+                </div>
                 <div class="sidebar hidden">
                     <img class="menu-icon" src="asset/icon/menu.png" onclick="toggleSidebar()">
                     <a href="akun.html">
@@ -49,10 +53,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="jadi-satu">
-                    <a href="konspirasi/konspirasi.html">Konspirasi</a>
-                    <a href="#">Games</a>
-                </div>
+                
                 <div>
                         <img class="menu-icon" src="asset/icon/user.png" alt="User icon for login or register" onclick="togglePopupnav()">
                         <div id="profile-popup" class="popup-overlay">
@@ -131,20 +132,20 @@
             </div>
         </div>
         
-        <div class="popup-overlay" id="popup">
-            <div class="popup-content">
-                <button class="popup-close" onclick="closePopup()">&times;</button>
-                <div class="title" id="popup-title"></div>
+        <div class="news-popup-overlay" id="popup">
+            <div class="news-popup-content">
+                <button class="news-popup-close" onclick="closePopup()">&times;</button>
+                <div class="title" id="news-popup-title"></div>
                 <div class="image-container">
-                    <img id="popup-image" src="" alt="Popup Image" />
+                    <img id="news-popup-image" src="" alt="Popup Image" />
                 </div>
-                <div class="content-content" id="popup-content"></div>
+                <div class="content" id="news-popup-content"></div>
             </div>
-        </div>
+        </div>        
         
         <script>
             const newsData = [
-                {
+            {
                     title: "Misteri Hilangnya Will Byers Menggemparkan Hawkins!",
                     image: "asset/news/1.png",
                     content: `
@@ -185,26 +186,27 @@
                             <p style="text-indent: 0.5cm;">Pemerintah setempat kini tengah berupaya untuk meredam kekhawatiran masyarakat dengan meningkatkan patroli keamanan. Namun, hingga misteri ini terungkap, kisah monster Hawkins akan terus menjadi pembicaraan hangat dan menambah warna dalam kehidupan kota kecil ini. Apakah monster itu benar-benar ada, ataukah ini hanya buah dari imajinasi dan ketakutan kolektif? Hanya waktu yang bisa menjawab.</p>
                             `
                 }
-            ];
-        
-            function showPopup(index) {
-                const popup = document.getElementById('popup');
-                const popupTitle = document.getElementById('popup-title');
-                const popupImage = document.getElementById('popup-image');
-                const popupContent = document.getElementById('popup-content');
-        
-                const data = newsData[index - 1];
-                popupTitle.textContent = data.title;
-                popupImage.src = data.image;
-                popupContent.innerHTML = data.content;
-        
-                popup.style.display = 'block';
-            }
-        
-            function closePopup() {
-                const popup = document.getElementById('popup');
-                popup.style.display = 'none';
-            }
+];
+
+function showPopup(index) {
+    const popup = document.getElementById('popup');
+    const popupTitle = document.getElementById('news-popup-title');
+    const popupImage = document.getElementById('news-popup-image');
+    const popupContent = document.getElementById('news-popup-content');
+
+    const data = newsData[index - 1];
+    popupTitle.textContent = data.title;
+    popupImage.src = data.image;
+    popupContent.innerHTML = data.content;
+
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+
         </script>
         
         <img class="divider" src="asset/bg/Group 13.png" alt="Torn paper separator">

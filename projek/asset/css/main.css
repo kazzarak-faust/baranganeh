@@ -35,13 +35,24 @@ body {
 .navbar-main {
     display: flex;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    top: 0;
-    background-color: rgba(128, 128, 128, 0.5); /* Warna abu transparan */
-    justify-content: space-between;
+    justify-content: space-between; /* Menyebar elemen secara merata */
+    padding: 10px 20px;
+    background-color: rgba(128, 128, 128, 0.5);
 }
+
+.jadi-satu {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Sesuaikan nilai ini agar lebih dekat dengan ikon sidebar */
+}
+
+.jadi-satu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+}
+
 .navbar-main a {
     color: white;
     text-decoration: none;
@@ -448,7 +459,7 @@ body {
     text-align: center;
 }
 
-.popup-overlay {
+.news-popup-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -459,7 +470,7 @@ body {
     z-index: 1000;
 }
 
-.popup-content {
+.news-popup-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -474,13 +485,13 @@ body {
     overflow-y: auto;
 }
 
-.popup-content img {
+.news-popup-content img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-.popup-close {
+.news-popup-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -491,20 +502,23 @@ body {
     cursor: pointer;
 }
 
-.popup-content .title {
+.news-popup-content .title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
     color: #f5f5f5;
 }
 
-.popup-content .content {
+.news-popup-content .content {
     text-align: left;
     margin-top: 20px;
     font-size: 16px;
     line-height: 1.6;
     color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .header {
     font-size: 2em;
