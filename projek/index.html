@@ -1,0 +1,274 @@
+<html>
+ <head>
+  <title>
+   Stranger Things
+  </title>
+  <link rel="stylesheet" href="asset/css/main.css" />
+ </head>
+ <body style="background-image: url(asset/bg/Background.png);">
+    <div class="header">
+        <div class="navbar">
+            <img class="menu-icon" src="asset/icon/menu.png" onclick="toggleSidebar()">
+            <div class="sidebar hidden">
+                <img class="menu-icon" src="asset/icon/menu.png" onclick="toggleSidebar()">
+                <a href="akun.html"><div class="menu-item">
+                    <img class="menu-icon default-icon" src="asset/icon/mdi_account-circle-outline.png">
+                    Akun
+                </div></a>
+                <a href="about.html"><div class="menu-item">
+                    <img class="menu-icon default-icon" src="asset/icon/ix_about.png">
+                    Tentang Kami
+                </div></a>
+                <a href="konspirasi/add.html"><div class="menu-item">
+                    <img class="menu-icon default-icon" src="asset/icon/icons8_plus.png">
+                    Komunitas
+                </div></a>
+            </div>
+            <div>
+                <a href="konspirasi/konspirasi.html">Konspirasi</a>
+                <a href="#">Games</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="text-content">
+            <h2>WELCOME, STANGERHEADS!</h2>
+            <p>Stranger Things adalah serial TV yang berlatar belakang tahun 1980-an di kota Hawkins, Indiana. Serial ini menceritakan perputaran hilangnya seorang anak laki-laki bernama Will Byers dan upaya teman-temannya untuk menemukannya.</p>
+            <p>Selama pencarian, mereka bertemu dengan seorang gadis misterius bernama Eleven yang memiliki kekuatan super. Bersama-sama, mereka mengungkap rahasia gelap yang melibatkan eksperimen pemerintah, dimensi paralel yang disebut “Upside Down”, dan makhluk mengerikan yang mengecam kota Hawkins.</p>
+            <div class="buttons">
+                <a href="#hawkins">Jelajahi Hawkins</a>
+                <a href="#upside">Jelajahi Upside Down</a>
+            </div>
+        </div>
+        <div class="poster">
+            <img alt="Poster of Stranger Things showing the main characters and the title" height="300" src="asset/poster/Stranger Things.jpg" width="200"/>
+        </div>
+    </div>
+    <hr>
+    <div class="container" id="hawkins">
+        <div class="header2">
+            WELCOME, TO HAWKINS!
+            <div class="sub-header">
+                HELLFIRE CLUB
+            </div>
+        </div>
+        <img class="divider" src="asset/bg/Group 13.png" alt="Torn paper separator">
+        <div class="content2" style="background-image: url(asset/bg/bg2down.jpg);">
+            <div class="card">
+                <img alt="Eleven" height="500" src="asset/tokoh/1.png" width="400"/>
+            </div>
+            <div class="card">
+                <img alt="Mike Wheeler" height="400" src="asset/tokoh/2.png" width="300"/>
+            </div>
+            <div class="card">
+                <img alt="Will Byers" height="400" src="asset/tokoh/3.png" width="300"/>
+            </div>
+            <div class="card">
+                <img alt="Lucas Sinclair" height="400" src="asset/tokoh/4.png" width="300"/>
+            </div>
+            <div class="card">
+                <img alt="Dustin Henderson" height="400" src="asset/tokoh/5.png" width="300"/>
+            </div>
+        </div>
+    
+        <div id="news" class="attention" style="display: flex; justify-content: center; align-items: center; position: relative; margin-bottom: -90px;">
+        <img alt="warning" src="asset/icon/warning.png" style="height: 50px;">
+        <h2  style="color: red; text-align: center; margin: 0 10px;">ATTENTION!</h2>
+        <img alt="warning" src="asset/icon/warning.png" style="height: 50px;">
+        </div>
+        <img class="divider" src="asset/bg/Group 13.png" alt="Torn paper separator">
+        
+        <marquee scrollamount="20"><h2 class="breaking-news-title" style="text-align: center; color: red; margin-top: -40px;padding: 40px;">BREAKING NEWS BREAKING NEWS BREAKING NEWS BREAKING NEWS BREAKING NEWS BREAKING NEWS BREAKING NEWS BREAKING NEWS</h2></marquee>    
+        <div class="news-container"  style="background-image: url('asset/bg/hawkins down town.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="news-item">
+                <img alt="Misteri Hilangnya Will Byers Menggemparkan Hawkins!" height="200" src="asset/berita/1.png" width="200" onclick="showPopup(1)"/>
+            </div>
+            <div class="news-item">
+                <img alt="Penemuan Laboratorium Rahasia di Hawkins" height="200" src="asset/berita/2.png" width="200" onclick="showPopup(2)"/>
+            </div>
+            <div class="news-item">
+                <img alt="Kisah Aneh Seorang Gadis dengan Kekuatan Super" height="200" src="asset/berita/3.png" width="200" onclick="showPopup(3)"/>
+            </div>
+            <div class="news-item">
+                <img alt="Misteri Monster di Hawkins" height="200" src="asset/berita/4.png" width="200" onclick="showPopup(4)"/>
+            </div>
+        </div>
+        
+        <div class="popup-overlay" id="popup">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup()">&times;</button>
+                <div class="title" id="popup-title"></div>
+                <div class="image-container">
+                    <img id="popup-image" src="" alt="Popup Image" />
+                </div>
+                <div class="content-content" id="popup-content"></div>
+            </div>
+        </div>
+        
+        <script>
+            const newsData = [
+                {
+                    title: "Misteri Hilangnya Will Byers Menggemparkan Hawkins!",
+                    image: "asset/news/1.png",
+                    content: `
+                            <p style="text-indent: 0.5cm;">Hawkins, Indiana – Sebuah tragedi mengejutkan melanda kota kecil ini setelah hilangnya seorang anak lelaki berusia 12 tahun, Will Byers, pada malam Jumat, 6 November. Kehilangan ini terjadi tanpa jejak, memicu kepanikan di kalangan keluarga dan warga setempat. Will dilaporkan menghilang sekitar pukul 7 malam setelah mengendarai sepedanya pulang dari rumah temannya di pinggiran kota. Hingga kini, pencarian besar yang melibatkan polisi dan penduduk lokal belum berhasil menemukan tanda-tanda keberadaan Will.</p>
+                            <p style="text-indent: 0.5cm;">Menurut ibu Will, Joyce Byers, saat terakhir kali melihat anaknya, Will sedang dalam perjalanan pulang, namun ia tidak pernah sampai di rumah. Kejanggalan semakin terasa ketika keluarga dan teman-temannya mulai menerima laporan dari sejumlah saksi yang mengatakan bahwa mereka mendengar suara aneh dan tidak biasa dari hutan yang mengelilingi kota. Salah satu saksi, seorang teman dekat Will, mengatakan bahwa ia melihat sepeda Will tergeletak di jalan raya tak jauh dari rumahnya, namun Will seakan lenyap tanpa jejak. Pihak kepolisian yang langsung menangani kasus ini belum memberikan keterangan lebih lanjut tentang kemungkinan penyebab hilangnya Will.</p>
+                            <p style="text-indent: 0.5cm;">Sementara itu, para remaja yang merupakan teman-teman dekat Will, seperti Mike Wheeler, Lucas Sinclair, dan Dustin Henderson, mulai melibatkan diri dalam pencarian tersebut. Mereka menduga bahwa kejadian hilangnya Will mungkin terkait dengan fenomena aneh yang belakangan ini terjadi di Hawkins, termasuk munculnya laporan-laporan tentang suara-suara misterius dan fenomena cahaya yang tidak dapat dijelaskan. Beberapa anak tersebut bahkan mengungkapkan bahwa mereka mencurigai adanya kaitan antara hilangnya Will dengan keberadaan laboratorium pemerintah di Hawkins, yang selama ini dikenal melakukan eksperimen riset yang tidak transparan.</p>
+                            <p style="text-indent: 0.5cm;">Kepanikan warga semakin memuncak setelah dilaporkan bahwa sejumlah petugas yang terlibat dalam pencarian di hutan sekitar kota juga mulai merasakan hal-hal aneh, seperti peralatan yang rusak tanpa alasan yang jelas dan kejadian tak terjelaskan lainnya. Beberapa keluarga bahkan mengungkapkan ketakutan mereka bahwa kejadian ini adalah bagian dari sesuatu yang lebih besar, yang belum mereka pahami sepenuhnya.</p>
+                            <p style="text-indent: 0.5cm;">Meskipun pihak kepolisian Hawkins berjanji untuk terus melanjutkan pencarian, misteri hilangnya Will Byers semakin menjadi bahan perbincangan di seluruh kota. Sementara itu, warga Hawkins berharap agar anak mereka segera ditemukan, dan mereka mengungkapkan kekhawatiran tentang kemungkinan adanya kekuatan yang lebih besar di balik peristiwa aneh yang terjadi dalam beberapa minggu terakhir. Apa yang sebenarnya terjadi dengan Will Byers dan apa yang tersembunyi di balik peristiwa ini masih menjadi teka-teki yang sulit terpecahkan.</P>
+                            `
+                },
+                {
+                    title: "Penemuan Laboratorium Rahasia di Hawkins: Apa yang Disembunyikan Pemerintah?",
+                    image: "asset/news/2.png",
+                    content: `
+                            <p style="text-indent: 0.5cm;">Warga Hawkins dikejutkan dengan penemuan sebuah laboratorium rahasia yang diduga kuat beroperasi di bawah pengawasan pemerintah. Laboratorium yang tersembunyi di tengah hutan lebat itu pertama kali terungkap setelah laporan dari seorang warga setempat yang melihat aktivitas mencurigakan di sekitar area tersebut. Penyelidikan lebih lanjut mengungkapkan keberadaan fasilitas bawah tanah yang dilengkapi dengan teknologi canggih dan sistem keamanan ketat.</P>
+                            <p style="text-indent: 0.5cm;">Menurut sumber yang enggan disebutkan namanya, laboratorium ini diduga digunakan untuk eksperimen-eksperimen rahasia yang melibatkan penelitian ilmiah tingkat tinggi. Beberapa dokumen yang ditemukan di lokasi mengindikasikan adanya penelitian yang berhubungan dengan dimensi lain dan pengembangan teknologi militer. Meskipun belum ada pernyataan resmi dari pihak berwenang, banyak yang berspekulasi bahwa laboratorium ini telah beroperasi selama bertahun-tahun tanpa sepengetahuan publik.</P>
+                            <p style="text-indent: 0.5cm;">Penemuan ini memicu kekhawatiran di kalangan masyarakat Hawkins. Beberapa warga melaporkan kejadian aneh seperti gangguan listrik, suara-suara misterius, hingga hilangnya hewan peliharaan di sekitar wilayah tersebut. Isu ini semakin diperburuk dengan munculnya kesaksian dari mantan pegawai laboratorium yang mengklaim adanya eksperimen berbahaya yang melibatkan manusia.</P>
+                            <p style="text-indent: 0.5cm;">Hingga kini, pemerintah tetap bungkam dan menolak memberikan komentar terkait penemuan laboratorium tersebut. Namun, masyarakat mendesak transparansi dan penyelidikan mendalam untuk memastikan tidak ada ancaman terhadap keamanan mereka. Sementara itu, aktivis lokal mulai mengorganisir aksi protes, menuntut penghentian operasi laboratorium tersebut dan pengungkapan kebenaran di balik temboknya. Apa sebenarnya yang disembunyikan di Hawkins? Jawaban atas pertanyaan ini masih menjadi misteri besar yang menarik perhatian nasional.</P>
+                            `
+                },
+                {
+                    title: "Kisah Aneh Seorang Gadis dengan Kekuatan Super Mengguncang Kota Hawkins",
+                    image: "asset/news/3.png",
+                    content: `
+                            <p style="text-indent: 0.5cm;">Kota kecil Hawkins mendadak menjadi sorotan setelah kemunculan seorang gadis misterius yang diyakini memiliki kekuatan super. Gadis itu, yang hanya diketahui bernama Ella, pertama kali terlihat di pusat kota saat menyelamatkan seorang anak kecil dari kecelakaan maut. Dengan hanya mengangkat tangannya, sebuah mobil yang meluncur dengan kecepatan tinggi tiba-tiba berhenti di udara, membuat warga sekitar terperangah. Saksi mata melaporkan bahwa Ella kemudian menghilang begitu saja sebelum pihak berwenang tiba di lokasi.</p>
+                            <p style="text-indent: 0.5cm;">Kabar tentang Ella menyebar dengan cepat, dan banyak warga Hawkins merasa takut sekaligus penasaran. Beberapa menganggapnya sebagai malaikat penjaga, sementara yang lain mencurigainya sebagai ancaman. Situasi semakin panas ketika berbagai kejadian aneh mulai terjadi di kota itu. Peralatan elektronik rusak tanpa alasan, angin kencang muncul secara tiba-tiba, dan binatang-binatang liar terlihat gelisah di pinggiran kota. Beberapa penduduk bahkan mengklaim melihat Ella berjalan di malam hari, mengenakan jubah hitam, dengan mata yang bersinar redup.</p>
+                            <p style="text-indent: 0.5cm;">Pihak berwenang di Hawkins mengaku kewalahan dengan situasi ini. Kepala polisi Jim Hopper menyatakan bahwa mereka sedang berusaha mencari tahu lebih banyak tentang identitas Ella dan asal usul kekuatannya. "Kami meminta warga untuk tetap tenang dan melaporkan segala sesuatu yang mencurigakan," katanya dalam konferensi pers. Namun, hingga kini, tidak ada penjelasan logis tentang kekuatan luar biasa yang dimiliki oleh gadis tersebut.</p>
+                            <p style="text-indent: 0.5cm;">Sementara itu, para ahli dan peneliti mulai berdatangan ke Hawkins untuk menyelidiki fenomena ini. Beberapa teori muncul, dari kemungkinan mutasi genetik hingga eksperimen rahasia yang bocor. Namun, satu hal yang pasti, keberadaan Ella telah mengguncang kota Hawkins, mengubahnya dari kota kecil yang tenang menjadi pusat perhatian dunia. Warga kini hanya bisa menunggu apa yang akan terjadi selanjutnya—apakah Ella akan menjadi penyelamat atau justru ancaman terbesar bagi mereka.</p>
+                            `
+                },
+                {
+                    title: "Misteri Monster di Hawkins: Isu atau Realita?",
+                    image: "asset/news/4.png",
+                    content: ` <p style="text-indent: 0.5cm;">Dalam beberapa minggu terakhir, penduduk kota kecil Hawkins dikejutkan oleh berbagai laporan mengenai penampakan makhluk misterius yang diduga sebagai monster. Beberapa saksi mata mengaku melihat sosok besar dengan tubuh menyeramkan, mata merah menyala, dan gerakan yang tidak wajar di area hutan sekitar kota. Meski laporan ini belum terbukti secara ilmiah, cerita tersebut telah menimbulkan ketakutan di kalangan warga.</p>
+                            <p style="text-indent: 0.5cm;">Menurut laporan seorang remaja lokal, makhluk itu terlihat berkeliaran di dekat tambang tua yang sudah lama ditinggalkan. “Saya tidak pernah melihat sesuatu seperti itu sebelumnya. Bentuknya seperti bukan hewan biasa,” ujar saksi yang tidak ingin disebutkan namanya. Namun, pihak kepolisian Hawkins menyatakan bahwa sejauh ini belum ditemukan bukti konkret adanya makhluk tersebut, dan meminta masyarakat untuk tidak menyebarkan kepanikan.</p>
+                            <p style="text-indent: 0.5cm;">Di sisi lain, sejumlah teori mulai bermunculan, mulai dari makhluk hasil eksperimen ilmiah yang gagal hingga fenomena alam yang belum terjelaskan. Pakar paranormal dari luar kota bahkan telah datang untuk melakukan penyelidikan lebih lanjut. Mereka percaya bahwa Hawkins mungkin menjadi titik anomali tertentu yang menarik kehadiran makhluk-makhluk dari dimensi lain.</p>
+                            <p style="text-indent: 0.5cm;">Meskipun belum ada kejelasan, isu ini telah mempengaruhi rutinitas warga. Banyak yang memilih untuk tidak keluar rumah setelah gelap, sementara beberapa kelompok pemuda Hawkins justru berusaha memburu makhluk tersebut dengan peralatan seadanya. Bagi sebagian orang, cerita ini adalah kesempatan untuk membuktikan keberanian, tetapi bagi lainnya, ini adalah ancaman nyata yang mengancam ketenangan hidup di Hawkins.</p>
+                            <p style="text-indent: 0.5cm;">Pemerintah setempat kini tengah berupaya untuk meredam kekhawatiran masyarakat dengan meningkatkan patroli keamanan. Namun, hingga misteri ini terungkap, kisah monster Hawkins akan terus menjadi pembicaraan hangat dan menambah warna dalam kehidupan kota kecil ini. Apakah monster itu benar-benar ada, ataukah ini hanya buah dari imajinasi dan ketakutan kolektif? Hanya waktu yang bisa menjawab.</p>
+                            `
+                }
+            ];
+        
+            function showPopup(index) {
+                const popup = document.getElementById('popup');
+                const popupTitle = document.getElementById('popup-title');
+                const popupImage = document.getElementById('popup-image');
+                const popupContent = document.getElementById('popup-content');
+        
+                const data = newsData[index - 1];
+                popupTitle.textContent = data.title;
+                popupImage.src = data.image;
+                popupContent.innerHTML = data.content;
+        
+                popup.style.display = 'block';
+            }
+        
+            function closePopup() {
+                const popup = document.getElementById('popup');
+                popup.style.display = 'none';
+            }
+        </script>
+        
+        <img class="divider" src="asset/bg/Group 13.png" alt="Torn paper separator">
+        <div class="limit">
+            LEAVING HAWKINS!
+            <div class="sub-header">
+                COME AGAIN SOON
+            </div>
+        </div>
+    </div>
+    <div class="container" id="upside">
+        <div class="header-down">
+            WELCOME, TO UP SIDE DOWN!
+        </div>
+        <img class="divider" src="asset/bg/Group 13.png" alt="Torn paper separator">
+        <div class="content-down" style="background-image: url(asset/bg/Разум\ Векны.jpg);">
+            <img alt="Demogorgon" height="300" src="asset/gambar/Demogorgon.png" width="150"/>
+            <h2>
+             DEMOGORGON
+            </h2>
+            <p>
+             Demogorgon adalah makhluk mengerikan yang menjadi antagonis utama dalam Stranger Things musim pertama. Monster ini berasal dari dunia alternatif yang dikenal sebagai The Upside Down, sebuah dimensi gelap dan penuh bahaya. Wujud fisiknya sangat menyeramkan, dengan tubuh humanoid yang tinggi, kulit abu-abu kasar, dan tangan yang berujung cakar tajam. Salah satu ciri khasnya adalah kepalanya yang menyerupai bunga besar tanpa mata, yang mekar untuk memperlihatkan mulut penuh gigi tajam yang mengancam.
+            </p>
+            <p>
+             Demogorgon dikenal sangat agresif dan haus darah, berburu mangsanya dengan insting predator yang luar biasa. Dalam cerita, ia bertanggung jawab atas hilangnya beberapa penduduk Hawkins, termasuk Will Byers, dan menjadi simbol kekuatan jahat dari dimensi lain yang menyebar ke dunia manusia. Keberadaannya menambah ketegangan dan kengeriandalam perjalanan para karakter utama untuk menyelamatkan Will dan menghentikan ancaman dari The Upside Down.
+            </p>
+           </div>
+           <img class="divider" src="asset/bg/Group 13.png" alt="Torn paper separator">
+           <div class="container" id="konspirasi" style="background-image: url(asset/gambar/bg-logn.jpg);">
+            <h1>
+             KONSPIRASI STRANGER THINGS!
+            </h1>
+            <div class="section" >
+             <h2>
+              Eksperimen Rahasia Hawkins Lab
+             </h2>
+             <div class="section-content-right">
+              <p>
+               Hawkins National Laboratory menjadi sumber utama segala kejadian aneh. Di balik kedok penelitian energi, Lab ini menjalankan eksperimen rahasia terkait dimensi alternatif. Salah satu eksperimen ini membuka portal menuju Upside Down, sebuah dimensi gelap dan berbahaya. Portal tersebut menciptakan gangguan besar, menyebabkan makhluk dari dunia itu, seperti Demogorgon, masuk ke dunia nyata.
+              </p>
+              <img alt="Gambar eksperimen rahasia di Hawkins Lab" height="200" src="asset/konspirasi/1.jpg" width="200"/>
+             </div>
+            </div>
+            <div class="section">
+             <h2>
+              Keterkaitan Upside Down dengan Kehilangan Will Byers
+             </h2>
+             <div class="section-content-left">
+              <img alt="Gambar keterkaitan Upside Down dengan kehilangan Will Byers" height="200" src="asset/konspirasi/2.jpg" width="200"/>
+              <p>
+               Ketika Will Byers menghilang, banyak yang percaya ia diculik atau hilang dalam dunia nyata. Namun, Upside Down menjadi bukti bahwa ada kekuatan yang lebih besar dan tersembunyi. Kehilangan Will menunjukkan hubungan langsung antara eksperimen di Hawkins Lab dan konsekuensi mematikan dari pembukaan dimensi tersebut.
+              </p>
+             </div>
+            </div>
+            <div class="section">
+             <h2>
+              Penutup Pemerintah
+             </h2>
+             <div class="section-content-right">
+              <p>
+               Setelah portal dibuka, pemerintah, melalui Hawkins Lab, berusaha menutupi jejak mereka. Mereka menyebarkan informasi palsu, seperti laporan bahwa Will tenggelam, untuk menutupi aktivitas ilegal dan eksperimen mereka yang mengancam warga Hawkins.
+              </p>
+              <img alt="Gambar penutup pemerintah" height="200" src="asset/konspirasi/3.jpg" width="200"/>
+             </div>
+            </div>
+           </div>
+           <img class="divider" src="asset/bg/Group 13.png" alt="Torn paper separator">
+           <div class="limit">
+            LEAVING HAWKINS!
+            <div class="sub-header">
+                COME AGAIN SOON
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="logo">
+                <img src="asset/gambar/STRANGER THINGS.png">
+            </div>
+            <div class="nav">
+                <a href="#">Kontak</a>
+                <a href="#">Bantuan</a>
+                <a href="#">FaQ</a>
+                <a href="#">Informasi</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="asset/icon/instagram.png" alt="Instagram icon" width="30" height="30"></a>
+                <a href="#"><img src="asset/icon/gmail.png" alt="Gmail icon" width="30" height="30"></a>
+                <a href="#"><img src="asset/icon/facebook.png" alt="Facebook icon" width="30" height="30"></a>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            @Copyright AnoraZeriveFudel
+        </div>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+        </script>
+    </body>
+</html>
