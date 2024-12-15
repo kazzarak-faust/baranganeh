@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  }
+  .container {
+    display: flex;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .image-section {
+    flex: 1;
+  }
+  .image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .form-section {
+    flex: 1;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-section h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .form-section p {
+    margin: 5px 0 20px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  .form-section .profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  .form-section .input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .form-section .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .form-section .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #444;
+    color: #fff;
+    font-size: 14px;
+  }
+  .form-section .input-group input::placeholder {
+    color: #aaa;
+  }
+  .form-section .input-group .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+  .form-section .btn-login, .form-section .btn-register {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    background: #b71c1c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  .form-section .btn-google {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #444;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-section .btn-google img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .form-section .register-link, .form-section .login-link {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .form-section .register-link a, .form-section .login-link a {
+    color: #1e88e5;
+    text-decoration: none;
+  }
+  .form-section .register-link a:hover, .form-section .login-link a:hover {
+    text-decoration: underline;
+  }

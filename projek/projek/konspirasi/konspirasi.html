@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
+    <title>Konspirasi</title>
     <link rel="stylesheet" href="../asset/css/main.css"/>
     <style>
         body {
@@ -19,6 +19,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative; /* Ensure the header is a reference point */
         }
         .header-add .logo {
             font-size: 24px;
@@ -36,6 +37,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            cursor: pointer;
+            position: relative; /* Important: Make this a reference point for the popup */
         }
         .header-add .profile img {
             width: 40px;
@@ -43,96 +46,80 @@
             border-radius: 50%;
         }
 
-        .content-akun {
+        .content-konspirasi {
             text-align: center;
             padding: 50px 20px;
         }
 
-        .content-akun h1 {
+        .content-konspirasi h1 {
             font-size: 32px;
             margin-bottom: 10px;
         }
 
-        .profile-card {
-            background-color: #5a1a1a;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
+        .content-konspirasi p {
+            font-size: 18px;
             margin-bottom: 30px;
-            width: 50%;
-            margin: 0 auto;
-            padding-left: 80px;
-            padding-right: 80px;
         }
 
-        .profile-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .profile-card h2 {
-            margin: 10px 0 5px;
-        }
-
-        .profile-card p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-
-        .history {
-            width: 60%;
-            margin: 0 auto;
-        }
-
-        .history h2 {
+        .add-button {
+            display: inline-block;
+            background-color: #5a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
             margin-bottom: 20px;
-            font-size: 24px;
         }
 
-        .history-item {
+        .konspirasi {
             background-color: #5b0000;
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             margin-bottom: 20px;
             display: flex;
+            flex-direction: column;
             align-items: center;
         }
 
-        .history-item img {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            margin-right: 15px;
+        .konspirasi .top-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
 
-        .history-item .text {
+        .konspirasi img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .konspirasi .text {
             flex: 1;
+            margin: 0 20px;
+            font-size: 16px;
+        }
+
+        .konspirasi .actions {
+            margin-top: 20px;
+        }
+
+        .konspirasi .actions button {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
             font-size: 14px;
         }
 
-        footer {
-            background-color: #5a1a1a;
-            padding: 20px;
-            text-align: center;
+        .konspirasi .actions button.delete {
+            background-color: red;
         }
 
-        footer .nav {
-            margin-bottom: 10px;
-        }
-
-        footer .nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        footer .social-icons img {
-            width: 24px;
-            margin: 0 5px;
-        }
-        .popup-overlay {
+.popup-overlay {
     display: none;
     position: fixed;
     top: 80px;
@@ -171,11 +158,6 @@
     background-color: #3b0000;
 }
     </style>
-    <script>
-        function redirectToProfile() {
-            window.location.href = "akun.html";
-        }
-    </script>
 </head>
 <body>
     <div class="header-add">
@@ -183,7 +165,7 @@
             STRANGER THINGS
         </div>
         <div class="nav">
-            <a href="index.html">Beranda</a>
+            <a href="../index.html">Beranda</a>
             <a href="konspirasi.html">Lihat Konspirasi</a>
         </div>
         <div class="profile" onclick="togglePopup()">
@@ -199,40 +181,44 @@
             </div>
         </div>
     </div>
-    <div class="content-akun">
-        <h1>PROFIL</h1>
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/100" alt="User">
-            <h2>ArizaZeriveFudel</h2>
-            <p>sipalinganeh@gmail.com</p>
-            <p>0874567876556</p>
+
+    <div class="content-konspirasi">
+        <h1>KONSPIRASI</h1>
+        <p>Para Stangerheads bebas berkonspirasi!!</p>
+        <a href="add.html" class="add-button">+ Tambah Konspirasi</a>
+
+        <div class="konspirasi">
+            <div class="top-section">
+                <div class="text">
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                </div>
+                <img src="https://via.placeholder.com/80" alt="User">
+            </div>
+            <div class="actions">
+                <button onclick="goToEditPage()">Edit</button>
+                <button class="delete">Hapus</button>
+            </div>
         </div>
 
-        <div class="history">
-            <h2>RIWAYAT PENYEBARAN KONSPIRASI</h2>
-            <div class="history-item">
-                <img src="https://via.placeholder.com/60" alt="Konspirasi">
+        <div class="konspirasi">
+            <div class="top-section">
                 <div class="text">
-                    <p>TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI.</p>
-                    <p>Ter Upload pada: 23/05/2024</p>
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
                 </div>
+                <img src="https://via.placeholder.com/80" alt="User">
             </div>
+            <div class="actions">
+                <button onclick="goToEditPage()">Edit</button>
+                <button class="delete">Hapus</button>
+            </div>
+        </div>
+    </div>
 
-            <div class="history-item">
-                <img src="https://via.placeholder.com/60" alt="Konspirasi">
-                <div class="text">
-                    <p>TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI.</p>
-                    <p>Ter Upload pada: 10/11/2024</p>
-                </div>
-            </div>
-
-            <div class="history-item">
-                <img src="https://via.placeholder.com/60" alt="Konspirasi">
-                <div class="text">
-                    <p>TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI TEXT KONSPIRASI.</p>
-                    <p>Ter Upload pada: 10/11/2024</p>
-                </div>
-            </div>
+    <div id="profile-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button onclick="">Login</button>
+            <button onclick="">Register</button>
+            <button onclick="closePopup()">Tutup</button>
         </div>
     </div>
 
@@ -253,15 +239,24 @@
                 <a href="#"><img src="../asset/icon/facebook.png" alt="Facebook icon" width="30" height="30"></a>
             </div>
         </div>
-        <script>
-            function togglePopup() {
-                const popup = document.getElementById("profile-popup");
-                popup.style.display = popup.style.display === "block" ? "none" : "block";
-            }
-    
-            function closePopup() {
-                document.getElementById("profile-popup").style.display = "none";
-            }
-        </script>
+        <hr>
+        <div class="copyright">
+            @Copyright AnoraZeriveFudel
+        </div>
+    </div>
+    <script>
+        function togglePopup() {
+            const popup = document.getElementById("profile-popup");
+            popup.style.display = popup.style.display === "block" ? "none" : "block";
+        }
+
+        function closePopup() {
+            document.getElementById("profile-popup").style.display = "none";
+        }
+
+        function goToEditPage() {
+            window.location.href = "edit.html";
+        }
+    </script>
 </body>
 </html>
