@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konspirasi</title>
+    <link rel="stylesheet" href="../asset/css/main.css"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #3b0000;
+            color: white;
+        }
+
+        .header-add {
+            background-color: #5a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Ensure the header is a reference point */
+        }
+        .header-add .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header-add .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .header-add .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .header-add .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            position: relative; /* Important: Make this a reference point for the popup */
+        }
+        .header-add .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .content-konspirasi {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .content-konspirasi h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .content-konspirasi p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .add-button {
+            display: inline-block;
+            background-color: #5a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .konspirasi {
+            background-color: #5b0000;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .konspirasi .top-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .konspirasi img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .konspirasi .text {
+            flex: 1;
+            margin: 0 20px;
+            font-size: 16px;
+        }
+
+        .konspirasi .actions {
+            margin-top: 20px;
+        }
+
+        .konspirasi .actions button {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .konspirasi .actions button.delete {
+            background-color: red;
+        }
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 0px;
+    left: auto;
+    background: transparent;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    height: 160px;
+}
+
+.popup-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.popup-content img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    background-color: #5a1a1a;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup-content button:hover {
+    background-color: #3b0000;
+}
+    </style>
+</head>
+<body>
+    <div class="header-add">
+        <div class="logo">
+            STRANGER THINGS
+        </div>
+        <div class="nav">
+            <a href="../index.html">Beranda</a>
+            <a href="konspirasi.html">Lihat Konspirasi</a>
+        </div>
+        <div class="profile" onclick="togglePopup()">
+            <span>Ariza Nola Rufiana</span>
+            <img alt="Profile Picture" src="https://storage.googleapis.com/a1aa/image/sFqNm1CWpGa8I5prtYQdfW8GbXhCeWq1ocL3xZnWQ3wpme1nA.jpg" />
+        </div>
+        <!-- Pop-up container -->
+        <div id="profile-popup" class="popup-overlay">
+            <div class="popup-content">
+                <button onclick="">Login</button>
+                <button onclick="">Register</button>
+                <button onclick="closePopup()">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-konspirasi">
+        <h1>KONSPIRASI</h1>
+        <p>Para Stangerheads bebas berkonspirasi!!</p>
+        <a href="add.html" class="add-button">+ Tambah Konspirasi</a>
+
+        <div class="konspirasi">
+            <div class="top-section">
+                <div class="text">
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                </div>
+                <img src="https://via.placeholder.com/80" alt="User">
+            </div>
+            <div class="actions">
+                <button onclick="goToEditPage()">Edit</button>
+                <button class="delete">Hapus</button>
+            </div>
+        </div>
+
+        <div class="konspirasi">
+            <div class="top-section">
+                <div class="text">
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                </div>
+                <img src="https://via.placeholder.com/80" alt="User">
+            </div>
+            <div class="actions">
+                <button onclick="goToEditPage()">Edit</button>
+                <button class="delete">Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button onclick="">Login</button>
+            <button onclick="">Register</button>
+            <button onclick="closePopup()">Tutup</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="logo">
+                <img src="../asset/gambar/STRANGER THINGS.png">
+            </div>
+            <div class="nav">
+                <a href="#">Kontak</a>
+                <a href="#">Bantuan</a>
+                <a href="#">FaQ</a>
+                <a href="#">Informasi</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="../asset/icon/instagram.png" alt="Instagram icon" width="30" height="30"></a>
+                <a href="#"><img src="../asset/icon/gmail.png" alt="Gmail icon" width="30" height="30"></a>
+                <a href="#"><img src="../asset/icon/facebook.png" alt="Facebook icon" width="30" height="30"></a>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            @Copyright AnoraZeriveFudel
+        </div>
+    </div>
+    <script>
+        function togglePopup() {
+            const popup = document.getElementById("profile-popup");
+            popup.style.display = popup.style.display === "block" ? "none" : "block";
+        }
+
+        function closePopup() {
+            document.getElementById("profile-popup").style.display = "none";
+        }
+
+        function goToEditPage() {
+            window.location.href = "edit.html";
+        }
+    </script>
+</body>
+</html>

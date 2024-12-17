@@ -1,0 +1,56 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="asset/css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="image-section">
+                <img alt="Stranger Things poster with various characters and scenes from the show" height="700" src="asset/bg/bglogin.png" width="500"/>
+            </div>
+            <div class="form-section">
+                <h2>LOGIN</h2>
+                <p>To be continue</p>
+                <img alt="Profile picture of user" class="profile-img" height="80" src="asset/icon/user.png" width="80"/>
+                <!-- Form login dengan method POST dan action mengarah ke login.php -->
+                <form action="login.php" method="POST">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <div style="position: relative;">
+                            <!-- Tambahkan name="username" agar data bisa diterima di PHP -->
+                            <input id="username" name="username" placeholder="Anora Jeripe Fudel" type="text" required />
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div style="position: relative;">
+                            <!-- Tambahkan name="password" agar data bisa diterima di PHP -->
+                            <input id="password" name="password" placeholder="************" type="password" required />
+                            <img alt="Toggle password visibility" class="password-toggle" height="20" src="asset/icon/eye.png" width="20"/>
+                        </div>
+                    </div>
+                    <!-- Tombol submit -->
+                    <button class="btn-login" type="submit">Login</button>
+                    <button class="btn-google">
+                        <img alt="Google logo" height="20" src="asset/icon/google.png" width="20"/>
+                        Masuk Dengan Akun Google
+                    </button>
+                    <p class="register-link">
+                        Belum memiliki akun?
+                        <a href="register.html">klik disini!</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.querySelector('.password-toggle').addEventListener('click', function() {
+                const passwordInput = document.getElementById('password');
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.src = type === 'password' ? 'asset/icon/hide.png' : 'asset/icon/eye.png';
+            });
+        </script>
+    </body>
+</html>
